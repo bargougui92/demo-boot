@@ -1,7 +1,10 @@
-package com.example.user;
+package com.example.demo.user;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
 	private Integer id;
 	

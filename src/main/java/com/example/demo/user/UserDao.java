@@ -1,4 +1,4 @@
-package com.example.user;
+package com.example.demo.user;
 
 import java.util.ArrayList;
 import java.util.Date;
