@@ -2,14 +2,19 @@ package com.example.demo.user;
 
 import java.util.Date;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class User {
 	private Integer id;
 	
+	@Size(min = 2, message = "name should have at least two characters")
 	private String name;
 	
+	@Past
 	private Date birthday;
 	
 	public Integer getId() {
@@ -28,8 +33,11 @@ public class User {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	//Oussama U need this for post call
 	public User() {
 	}
+	
 	public String getName() {
 		return name;
 	}
