@@ -1,18 +1,21 @@
 package com.example.demo.filtering;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 //this is another way to ignore properties but this is not a best practice as u hardcode the names
-@JsonIgnoreProperties(value = {"field1"})
+//@JsonIgnoreProperties(value = {"field1"})
+//this is for the dynamic filtering
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 
 
 	private String field1;
 	private String field2;
-	
-	//Iwant to hide field3 in the REST response
-	@JsonIgnore
+
+	//I want to hide field3 in the REST response
+	//	@JsonIgnore
 	private String field3;
 
 	public SomeBean(String field1, String field2, String field3) {
@@ -39,5 +42,5 @@ public class SomeBean {
 	public void setField3(String field3) {
 		this.field3 = field3;
 	}
-	
+
 }
