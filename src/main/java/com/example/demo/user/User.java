@@ -7,7 +7,13 @@ import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+//you can see more swagger stuff in the jar swagger-annotations 
 @Component
+//this one is for swagger
+@ApiModel(description = "All details about the user.")
 public class User {
 	private Integer id;
 	
@@ -15,6 +21,7 @@ public class User {
 	private String name;
 	
 	@Past
+	@ApiModelProperty(notes = "birthdate should be in the past") // this one is for swagger
 	private Date birthday;
 	
 	public Integer getId() {
